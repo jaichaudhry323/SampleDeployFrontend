@@ -3,6 +3,8 @@ const path=require('path')
 
 const app=express()
 
+const serverport=process.env.PORT || 242
+
 app.use('/public',express.static(path.join(__dirname,'public')))
 
 app.get('/',(req,res)=>{
@@ -10,4 +12,5 @@ app.get('/',(req,res)=>{
 })
 
 
-app.listen(242,()=>console.log("lol"))
+app.listen(serverport,()=>console.log("lol"))
+
